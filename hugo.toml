@@ -1,7 +1,10 @@
 baseURL = 'https://ken-chy129.github.io/wiki/'
 languageCode = 'zh-cn'
 title = 'Personal Wiki'
-theme = 'hugo-book'
+
+[module]
+  [[module.imports]]
+    path = 'github.com/alex-shpak/hugo-book'
 
 [params]
   BookTheme = 'auto'
