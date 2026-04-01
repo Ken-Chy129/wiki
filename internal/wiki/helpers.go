@@ -28,7 +28,7 @@ func buildFrontMatter(title, tags, summary string) string {
 	var sb strings.Builder
 	sb.WriteString("---\n")
 	sb.WriteString(fmt.Sprintf("title: %q\n", title))
-	sb.WriteString(fmt.Sprintf("date: %s\n", time.Now().Format("2006-01-02")))
+	sb.WriteString(fmt.Sprintf("date: %s\n", time.Now().Format("2006-01-02T15:04:05+08:00")))
 	sb.WriteString("draft: true\n")
 	if summary != "" {
 		sb.WriteString(fmt.Sprintf("summary: %q\n", summary))
@@ -50,11 +50,16 @@ func slugify(title string) string {
 	s = strings.ReplaceAll(s, " ", "-")
 	var result []rune
 	for _, r := range s {
-		if (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') || r == '-' || r > 127 {
+		if (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') || r == '-' {
 			result = append(result, r)
 		}
 	}
-	return strings.Trim(string(result), "-")
+	s = strings.Trim(string(result), "-")
+	// collapse consecutive hyphens
+	for strings.Contains(s, "--") {
+		s = strings.ReplaceAll(s, "--", "-")
+	}
+	return s
 }
 
 func ensureCategoryIndex(categoryPath, category string) error {
