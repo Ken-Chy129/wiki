@@ -1,6 +1,6 @@
 ---
 title: "Claude Code 记忆体系解析：一个 Agent-Native 的长期记忆设计"
-date: 2026-04-01
+date: 2026-04-02
 draft: false
 summary: "从 Claude Code 的记忆体系出发，解析其架构、召回、写入与过期机制，并提炼出 Agent 记忆系统的通用设计原则"
 tags: ["Claude Code", "Agent", "Memory", "LLM"]
