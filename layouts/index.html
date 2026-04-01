@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{- $docs := .Site.GetPage "docs" -}}
+  {{- $firstSection := index ($docs.Sections.ByWeight) 0 -}}
+  {{- $firstPage := index $firstSection.RegularPages 0 -}}
+  <meta http-equiv="refresh" content="0; url={{ $firstPage.RelPermalink }}">
+</head>
+<body></body>
+</html>
