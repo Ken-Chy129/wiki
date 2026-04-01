@@ -312,7 +312,7 @@ func runArticlePreview(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("failed to create temp dir: %w", err)
 	}
 
-	hugoCmd := execCommand("hugo", "-d", tmpDir)
+	hugoCmd := execCommand("hugo", "-d", tmpDir, "--buildFuture")
 	hugoCmd.Dir = root
 	hugoCmd.Stderr = os.Stderr
 	if err := hugoCmd.Run(); err != nil {
@@ -321,7 +321,7 @@ func runArticlePreview(cmd *cobra.Command, args []string) error {
 
 	var htmlPath string
 	if apSlug != "" {
-		htmlPath = filepath.Join(tmpDir, "docs", apSlug, "index.html")
+		htmlPath = filepath.Join(tmpDir, "docs", strings.ToLower(apSlug), "index.html")
 	} else {
 		htmlPath = filepath.Join(tmpDir, "index.html")
 	}
