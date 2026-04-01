@@ -8,13 +8,10 @@ var rootCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(draftCmd)
-	rootCmd.AddCommand(editCmd)
-	rootCmd.AddCommand(bookmarkCmd)
-	rootCmd.AddCommand(previewCmd)
-	rootCmd.AddCommand(pushCmd)
-	rootCmd.AddCommand(listCmd)
+	rootCmd.AddCommand(articleCmd)
+	rootCmd.AddCommand(bookmarkGroupCmd)
 	rootCmd.AddCommand(searchCmd)
+	rootCmd.AddCommand(pushCmd)
 }
 
 func Execute() error {
