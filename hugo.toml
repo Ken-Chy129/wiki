@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'zh-cn'
-title = 'AI Learning'
+title = 'Personal Wiki'
 theme = 'hugo-book'
 
 [params]
