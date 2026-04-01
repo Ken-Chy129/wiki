@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Ken-Chy129/personal-wiki/internal/wiki"
+	"github.com/Ken-Chy129/wiki/internal/wiki"
 )
 
 func main() {

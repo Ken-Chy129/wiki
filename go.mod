@@ -1,4 +1,4 @@
-module github.com/Ken-Chy129/personal-wiki
+module github.com/Ken-Chy129/wiki
 
 go 1.25.0
 
