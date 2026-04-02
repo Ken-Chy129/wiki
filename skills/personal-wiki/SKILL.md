@@ -64,7 +64,7 @@ wiki push --diff      # 仅查看待发布变更
 
 **第三阶段：预览和修改**
 
-1. 询问用户是否预览：
+1. 创建草稿后，**直接启动预览**（不需要询问用户）：
    ```bash
    wiki article preview --slug "AI/LLM/文章slug"
    ```
