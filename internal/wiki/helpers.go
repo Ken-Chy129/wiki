@@ -46,19 +46,15 @@ func buildFrontMatter(title, tags, summary string) string {
 }
 
 func slugify(title string) string {
-	s := strings.ToLower(title)
-	s = strings.ReplaceAll(s, " ", "-")
+	// Strip characters that are unsafe in file paths
 	var result []rune
-	for _, r := range s {
-		if (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') || r == '-' {
-			result = append(result, r)
+	for _, r := range title {
+		if r == '/' || r == '\\' || r == '\x00' {
+			continue
 		}
+		result = append(result, r)
 	}
-	s = strings.Trim(string(result), "-")
-	// collapse consecutive hyphens
-	for strings.Contains(s, "--") {
-		s = strings.ReplaceAll(s, "--", "-")
-	}
+	s := strings.TrimSpace(string(result))
 	return s
 }
 
