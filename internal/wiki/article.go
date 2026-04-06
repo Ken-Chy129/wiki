@@ -312,7 +312,7 @@ func runArticlePreview(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("failed to create temp dir: %w", err)
 	}
 
-	hugoCmd := execCommand("hugo", "-d", tmpDir, "--buildFuture")
+	hugoCmd := execCommand("hugo", "-d", tmpDir, "--buildDrafts", "--buildFuture")
 	hugoCmd.Dir = root
 	hugoCmd.Stderr = os.Stderr
 	if err := hugoCmd.Run(); err != nil {
