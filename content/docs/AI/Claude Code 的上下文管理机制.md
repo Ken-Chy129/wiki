@@ -1,7 +1,7 @@
 ---
 title: "Claude Code 的上下文管理机制"
 date: 2026-04-06T17:52:33+08:00
-draft: true
+draft: false
 summary: "深入解析 Claude Code 的三层上下文管理：Microcompact 微压缩、Auto Compact 自动压缩、以及 Prompt Cache 缓存优化机制"
 tags: ["Claude Code", "Prompt Cache", "KV Cache", "上下文管理"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "LLM 推理原理：从 Token 到注意力机制"
 date: 2026-04-02T23:40:16+08:00
-draft: true
+draft: false
 summary: "从 token 分词、embedding、QKV 注意力机制到 KV Cache，逐步讲解大语言模型的推理工作流程"
 tags: ["LLM", "Transformer", "注意力机制", "KV Cache"]
 ---
